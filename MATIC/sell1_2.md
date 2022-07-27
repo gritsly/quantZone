@@ -1,4 +1,4 @@
-### Trigger   // Run when price goes above the average buy price * take profits modifier | repeat until MATICd
+### Trigger   // Run when price goes above the average buy price * take profits modifier | repeat until sold
 ```
 get_variable("MATIC_SELLBAG") < balance("MATIC") or price("MATIC/USD") > get_variable("@MATIC_avbp")*(1+get_variable("%MATIC_takeprof"))
 ```
