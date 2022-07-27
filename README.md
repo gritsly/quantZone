@@ -2,7 +2,7 @@
 
 This strategy is not reliant on any predictions of price. Just math - weighted DCA and take profits when available (also weighted).
 
-!DISCLAIMER - FTX Quant zone is very vulnerable to mistakes, rules will run indefinitely when not stopped etc. Use at your own risk, remember to set everything exactly as provided, and test first on low volumes of coins/USD!
+!DISCLAIMER - FTX Quant zone is very vulnerable to mistakes, rules will run indefinitely when not stopped etc. Use at your own risk, remember to set everything exactly as provided, and test first on low volumes of coins/USD! (I usually do tests on PAXG/USD pair as it is pretty stable/low risk).
 
 The following quant zones rules are based on DCA Bot from rimko: https://wiki.rimko.xyz/index.php/DCA_Bot
 
@@ -19,6 +19,7 @@ This strategy expands on the bot with following features:
   - "*COIN_OS" - 0 - internal variable for bot
   - "!COIN_Total" - your total amount of coin, ftx or otherwise you want to track
   - "COIN_BAG" - 9999999999 - very high amount above your holdings
+  - "@COIN_avbp" - 0 if you have 0 holdings, your estimated average buy price of this coin if you have holdings
 - Initialize global vars:
   - "!USD_Total" - your total amount of dry powder (recomputed every hour by attached initVar rule)
   - "!DCA_Speed" - how much of your dry powder you want to spend daily - f.eg 3% = !DCA_Speed:0.03
