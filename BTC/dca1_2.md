@@ -10,7 +10,7 @@ Set Variable
 BTC_BAG
 ```
 ```
-balance("BTC") + ((floor(((get_variable("!DCA_Speed")*get_variable("!USD_Total")*get_variable("-BTC_Order_size")*min(2,(average_price("BTC/USD", 40320)/price("BTC/USD"))**3))/price("BTC/USD"))*(1/get_variable("-BTC_Minimal_trad_size")))/(1/get_variable("-BTC_Minimal_trad_size")))) if get_variable("*BTC_OS") == 0 else get_variable("BTC_BAG")
+balance("BTC") + ((ceil(((get_variable("!DCA_Speed")*get_variable("!USD_Total")*get_variable("-BTC_Order_size")*min(2,(average_price("BTC/USD", 40320)/price("BTC/USD"))**3))/price("BTC/USD"))*(1/get_variable("-BTC_Minimal_trad_size")))/(1/get_variable("-BTC_Minimal_trad_size")))) if get_variable("*BTC_OS") == 0 else get_variable("BTC_BAG")
 ```
 ### Action 2   // Place buy order
 ```
@@ -20,7 +20,7 @@ Place Custom Order
 Limit Order | Buy | BTC_USD
 ```
 ```
-floor(((get_variable("!DCA_Speed")*get_variable("!USD_Total")*get_variable("-BTC_Order_size")*min(2,(average_price("BTC/USD", 40320)/price("BTC/USD"))**3))/price("BTC/USD"))*(1/get_variable("-BTC_Minimal_trad_size")))/(1/get_variable("-BTC_Minimal_trad_size")) if get_variable("*BTC_OS") == 0 else get_variable("BTC_BAG") - balance("BTC")
+ceil(((get_variable("!DCA_Speed")*get_variable("!USD_Total")*get_variable("-BTC_Order_size")*min(2,(average_price("BTC/USD", 40320)/price("BTC/USD"))**3))/price("BTC/USD"))*(1/get_variable("-BTC_Minimal_trad_size")))/(1/get_variable("-BTC_Minimal_trad_size")) if get_variable("*BTC_OS") == 0 else get_variable("BTC_BAG") - balance("BTC")
 ```
 ```
 bid_price("BTC/USD")

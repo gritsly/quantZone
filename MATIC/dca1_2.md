@@ -10,7 +10,7 @@ Set Variable
 MATIC_BAG
 ```
 ```
-balance("MATIC") + ((floor(((get_variable("!DCA_Speed")*7*get_variable("!USD_Total")*get_variable("-MATIC_Order_size")*min(2,(average_price("MATIC/USD", 40320)/price("MATIC/USD"))**2))/price("MATIC/USD"))*(1/get_variable("-MATIC_Minimal_trad_size")))/(1/get_variable("-MATIC_Minimal_trad_size")))) if get_variable("*MATIC_OS") == 0 else get_variable("MATIC_BAG")
+balance("MATIC") + ((ceil(((get_variable("!DCA_Speed")*7*get_variable("!USD_Total")*get_variable("-MATIC_Order_size")*min(2,(average_price("MATIC/USD", 40320)/price("MATIC/USD"))**2))/price("MATIC/USD"))*(1/get_variable("-MATIC_Minimal_trad_size")))/(1/get_variable("-MATIC_Minimal_trad_size")))) if get_variable("*MATIC_OS") == 0 else get_variable("MATIC_BAG")
 ```
 ### Action 2   // Place buy order
 ```
@@ -20,7 +20,7 @@ Place Custom Order
 Limit Order | Buy | MATIC_USD
 ```
 ```
-floor(((get_variable("!DCA_Speed")*7*get_variable("!USD_Total")*get_variable("-MATIC_Order_size")*min(2,(average_price("MATIC/USD", 40320)/price("MATIC/USD"))**2))/price("MATIC/USD"))*(1/get_variable("-MATIC_Minimal_trad_size")))/(1/get_variable("-MATIC_Minimal_trad_size")) if get_variable("*MATIC_OS") == 0 else get_variable("MATIC_BAG") - balance("MATIC")
+ceil(((get_variable("!DCA_Speed")*7*get_variable("!USD_Total")*get_variable("-MATIC_Order_size")*min(2,(average_price("MATIC/USD", 40320)/price("MATIC/USD"))**2))/price("MATIC/USD"))*(1/get_variable("-MATIC_Minimal_trad_size")))/(1/get_variable("-MATIC_Minimal_trad_size")) if get_variable("*MATIC_OS") == 0 else get_variable("MATIC_BAG") - balance("MATIC")
 ```
 ```
 bid_price("MATIC/USD")
