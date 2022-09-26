@@ -43,3 +43,33 @@ BTC_BAG
 ```
 9999999999
 ```
+### Action 5
+```
+Set Variable
+```
+```
+BTC_SELLBAG
+```
+```
+9999999999
+```
+### Action 6
+```
+Set Variable
+```
+```
+BTC_LASTSELL
+```
+```
+0
+```
+### Action 7
+```
+Set Variable
+```
+```
+%BTC_takeprof
+```
+```
+0.2
+```
