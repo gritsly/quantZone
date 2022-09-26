@@ -10,7 +10,7 @@ Place Custom Order
 Limit Order | Sell | BTC/USD
 ```
 ```
-ceil(((get_variable("!BTC_Total")*min(0.25,get_variable("%BTC_takeprof")/2)))*(1/get_variable("-BTC_Minimal_trad_size")))/(1/get_variable("-BTC_Minimal_trad_size")) if (get_variable("BTC_LASTSELL") == 0) else balance("BTC") - get_variable("BTC_SELLBAG") + get_variable("-BTC_Minimal_trad_size")
+ceil(((get_variable("!BTC_Total")*min(0.25,get_variable("%BTC_takeprof"))))*(1/get_variable("-BTC_Minimal_trad_size")))/(1/get_variable("-BTC_Minimal_trad_size")) if (get_variable("BTC_LASTSELL") == 0) else balance("BTC") - get_variable("BTC_SELLBAG") + get_variable("-BTC_Minimal_trad_size")
 ```
 ```
 offer_price("BTC/USD")
@@ -36,7 +36,7 @@ Set Variable
 BTC_SELLBAG
 ```
 ```
-max(get_variable("-BTC_Minimal_trad_size")*5,balance("BTC") - floor(((get_variable("!BTC_Total")*min(0.25,get_variable("%BTC_takeprof")/2)))*(1/get_variable("-BTC_Minimal_trad_size")))/(1/get_variable("-BTC_Minimal_trad_size"))) if (get_variable("BTC_LASTSELL") == 0) else get_variable("BTC_SELLBAG")
+max(get_variable("-BTC_Minimal_trad_size")*5,balance("BTC") - floor(((get_variable("!BTC_Total")*min(0.25,get_variable("%BTC_takeprof"))))*(1/get_variable("-BTC_Minimal_trad_size")))/(1/get_variable("-BTC_Minimal_trad_size"))) if (get_variable("BTC_LASTSELL") == 0) else get_variable("BTC_SELLBAG")
 ```
 ### Action 4   // Pause variable reset rule
 ```
